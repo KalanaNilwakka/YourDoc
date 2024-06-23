@@ -2,7 +2,7 @@ const doctors = [
   {
     id: 'D0001',
     name: 'Test doctor 1',
-    image: '../images/male-doc.jpg',
+    image: './images/male-doc.jpg',
     speciality: 'Surgeon',
     hospital: 'Asiri',
     description: 'ipsum dolor sit amet consectetur adipisicing elit. Unde iure velit hic! Illo alias voluptas reiciendis deserunt porro doloremque architecto dolore sunt?!'
