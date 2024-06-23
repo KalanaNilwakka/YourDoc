@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+.hospital{
+    
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+.intro{
+    
+    margin-left: 10%;
+ 
+}
+.button1{
+    margin-left: 10%;
+}
+#hospital1{
+    box-shadow: 0 10px 20px #555;
+    border-radius: 20px;
+    
+}
+
+

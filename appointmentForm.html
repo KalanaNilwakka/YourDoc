@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>YourDoc</title>
+  <link rel="icon" href="images/title-icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="appointmentsForm.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="JS/users.js"></script>
+  <script src="JS/doctors.js"></script>
+  <script src="JS/auth.js"></script>
+  <script defer src="JS/appointmentForm.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-body-tertiary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <h3>
+            <img src="images/title-icon.png" alt="Logo" width="30" height="32" class="d-inline-block align-text-top mt-1">
+            YourDoc
+        </h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+            <div class="cus-nav">
+                <li>
+                  <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                </li>
+            </div>
+            <div class="cus-nav">
+              <li>
+                <a class="nav-link" aria-current="page" href="sevices.html">Services</a>
+              </li>
+          </div>
+            <div class="cus-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="app.html">YourDoc App</a>
+                </li>
+            </div>
+            <div class="cus-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="signin.html" id="">Login</a>
+              </li>
+            </div>
+            <div class="cus-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="tel:+0112345678">0112 345 678</a>
+                </li>
+            </div>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="appFormContainer">
+      <div class="formBox">
+        <form class="row g-3" id="appointmentForm">
+          <h3 class="heading">Patient Information</h3>
+          <br>
+          <div class="col-md-6">
+            <label for="fisrtName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName">
+            <small class="text-danger" id="firstNameValidation"></small>
+          </div>
+          <div class="col-md-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName">
+          </div>
+          <div class="col-12">
+            <label for="contact" class="form-label">Contact No</label>
+            <input type="tel" class="form-control" id="contact">
+            <small class="text-danger" id="contactValidation"></small>
+          </div>
+          <div class="col-12">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email">
+            <small class="text-danger" id="emailValidation"></small>
+          </div>
+          <div class="col-12">
+            <label for="inputAddress" class="form-label">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Home, Street, City">
+            <small class="text-danger" id="addressValidation"></small>
+          </div>
+            <label>
+              Birth date:
+              <input type="date" name="birthDate" id="birthDate"/>
+            </label>
+            <small class="text-danger" id="bdayValidation"></small>
+          <br><br>    
+          <h3 class="heading">Appointment Information</h3><br><br>
+          <label>
+            Appointment date:
+            <input type="date" name="apptDate" id="apptDate"/>
+            <small class="text-danger" id="appDateValidation"></small>
+          </label>
+          <br><br>
+          <div class="col-md-12">
+            <label for="apptTime">Choose an appointment time: </label>
+            <input id="apptTime" type="time" name="appt-time" />
+            <small class="text-danger" id="appTimeValidation"></small>
+          </div>
+          <div class="col-md-12">
+            <label for="docName" class="form-label">Hospital Name</label>
+            <input type="text" class="form-control" id="hosName">
+            <small class="text-danger" id="hosNameValidation"></small>
+          </div>
+          <br><br><br>
+          <div class="col-md-12">
+            <label for="docName" class="form-label">Physician Name</label>
+            <input type="text" class="form-control" id="docName">
+            <small class="text-danger" id="docNameValidation"></small>
+          </div>
+          <br>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary submitButton">Place the appointment</button>
+          </div>
+          <div class="modal fade modalContent" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5 modalTitle" id="staticBackdropLabel">Successful</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modalBody">
+                  Your appointment has been successfully scheduled.Thank you!
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary"><a href="index.html" class="btn">Go to Home page</a></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="cus-footer">
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col-3" style="border-right: 2px solid rgb(155, 155, 142);">
+            <a href="https://www.facebook.com/" class="pe-3"><i class="bi-facebook cus-social display-5"></i></a>
+            <a href="https://www.instagram.com/" class="pe-3"><i class="bi bi-instagram cus-social display-5"></i></a>
+            <a href="https://www.youtube.com/" class="pe-3"><i class="bi bi-youtube cus-social display-5"></i></a>
+            <a href="https://www.linkedin.com"><i class="bi bi-linkedin cus-social display-5"></i></a>
+          </div>
+          <div class="col-5 ps-5">
+            <a href="index.html" class="text-decoration-none">
+              <h2 class="text-light">
+                <img src="images/title-icon.png" alt="Logo" width="34" height="38" class="d-inline-block align-text-top mt-1">
+                YourDoc
+              </h2>
+            </a>
+            <div class="ps-4 pt-1">
+              <p>
+                <a href="tel:+0112345678" class="text-decoration-none cus-foot"><i class="bi bi-telephone pe-2"></i>0112 345 678</a>
+              </p>
+              <p>
+                <a href="mailto:info@yourdoc.lk" class="text-decoration-none cus-foot"><i class="bi bi-envelope pe-2"></i>info@yourdoc.lk</a>
+              </p>
+              <p>
+                <a href="https://www.google.com/maps?authuser=0" class="text-decoration-none cus-foot"><i class="bi bi-buildings pe-2"></i>YourDoc PLC, No 123, Street ABC, Colombo 2,<br>Sri Lanka.</a>
+              </p>
+            </div>
+          </div>
+          <div class="col-4 ps-5 fs-5">
+            <p><a href="appointment.html" class="text-decoration-none cus-foot">Book an Appointment</a></p>
+            <p><a href="hospital.html" class="text-decoration-none cus-foot">Select a Hospital</a></p>
+            <p><a href="labtest.html" class="text-decoration-none cus-foot">Lab Tests</a></p>
+              <p><a href="sevices.html" class="text-decoration-none cus-foot">Services</a></p>
+            <p><a href="app.html" class="text-decoration-none cus-foot">Download YourDoc App!</a></p>
+          </div>
+        </div>
+        <div class="align-items-center text-center mt-3">
+          <small style="color: rgb(155, 155, 142);"><i class="bi bi-c-circle"></i> 2024 YourDoc</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

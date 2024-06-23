@@ -1,0 +1,10 @@
+.docType{
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(0, 43, 76);
+  color: white;
+}
+
+.docBar{
+  background-color: rgb(0, 43, 76);
+}
